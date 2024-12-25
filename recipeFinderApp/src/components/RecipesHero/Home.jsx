@@ -4,7 +4,19 @@ import chief from "../../assets/images/chief.jpg";
 import Slider from "./Slider";
 import RecipeCategory from "./RecipeCategory";
 import NewsInfo from "./NewsInfo";
+import SubscriptionForm from "./SubscriptionForm";
 function RecipeFinderHero() {
+  const images = [
+    { img: "/images/foodimage12.jpg", title: "Red Velvet Cake" },
+    { img: "/images/foodimage13.jpg", title: "Avocado Toast with Egg" },
+    { img: "/images/foodimage8.jpg", title: "Turkish Beyti Kebap" },
+    { img: "/images/foodimage5.jpg", title: "Grilled Chicken Wings" },
+    { img: "/images/image24.jpg", title: "Delicious Meal" },
+    { img: "/images/foodimage2.jpg", title: "Savory Dish" },
+    { img: "/images/foodimage16.jpg", title: "Pasta Bowl" },
+    { img: "/images/foodimage14.jpg", title: "Fruit Platter" },
+  ];
+
   return (
     <div>
       {/* herosection of recipe finder appp*/}
@@ -49,11 +61,12 @@ function RecipeFinderHero() {
             Featured Recipes
           </h2>
           <div className="bg-primary  py-2 mx-auto pb-[2em] z-20">
-            <Slider />
+            <Slider images={images} />
             <RecipeCategory />
           </div>
           <NewsInfo />
         </div>
+        <SubscriptionForm />
       </section>
     </div>
   );

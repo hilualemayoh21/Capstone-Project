@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import { FaSearch } from "react-icons/fa";
-import Home from "./Home";
 import { Link } from "react-router-dom";
 function Navigation() {
   const [display, setDisplay] = useState(false);

@@ -8,6 +8,7 @@ export default {
         "focus-color": "#FBF3E6",
         "input-color": "#EDDFCB",
         primary: "#F4DF9C", // Primary color
+        "bg-rose": "#FFFAFA",
       },
     },
   },

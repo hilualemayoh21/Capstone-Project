@@ -1,17 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-function Slider() {
+function Slider({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [
-    { img: "/images/foodimage12.jpg", title: "Red Velvet Cake" },
-    { img: "/images/foodimage13.jpg", title: "Avocado Toast with Egg" },
-    { img: "/images/foodimage8.jpg", title: "Turkish Beyti Kebap" },
-    { img: "/images/foodimage5.jpg", title: "Grilled Chicken Wings" },
-    { img: "/images/image24.jpg", title: "Delicious Meal" },
-    { img: "/images/foodimage2.jpg", title: "Savory Dish" },
-    { img: "/images/foodimage16.jpg", title: "Pasta Bowl" },
-    { img: "/images/foodimage14.jpg", title: "Fruit Platter" },
-  ];
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
