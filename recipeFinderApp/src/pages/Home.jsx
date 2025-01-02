@@ -1,10 +1,10 @@
 import React from "react";
-import { FaSearch } from "react-icons/fa";
-import chief from "../../assets/images/chief.jpg";
-import Slider from "./Slider";
-import RecipeCategory from "./RecipeCategory";
-import NewsInfo from "./NewsInfo";
-import SubscriptionForm from "./SubscriptionForm";
+import chief from "../assets/images/chief.jpg";
+import Slider from "../components/RecipesHero/Slider";
+import RecipeCategory from "../components/RecipesHero/RecipeCategory";
+import NewsInfo from "../components/RecipesHero/NewsInfo";
+import SubscriptionForm from "../components/RecipesHero/SubscriptionForm";
+import Search from "../components/RecipesHero/Search";
 function RecipeFinderHero() {
   const images = [
     { img: "/images/foodimage12.jpg", title: "Red Velvet Cake" },
@@ -16,7 +16,10 @@ function RecipeFinderHero() {
     { img: "/images/foodimage16.jpg", title: "Pasta Bowl" },
     { img: "/images/foodimage14.jpg", title: "Fruit Platter" },
   ];
-
+  const inputStyle =
+    "w-25 rounded-lg h-10 lg:w-[225px] bg-input-color px-2 focus:outline-none lg:h-8 focus:bg-focus-color";
+  const buttonStyle =
+    " text-center flex items-center justify-center rounded-md hover:scale-105  bg-button-yellow w-10 h-11 lg:h-8 cursor-pointer";
   return (
     <div>
       {/* herosection of recipe finder appp*/}
@@ -35,18 +38,11 @@ function RecipeFinderHero() {
                 now!
               </p>
             </div>
-            <div className=" text-sm  flex lg:gap-4 gap-2 items-center px-1 ">
+            <div className=" text-sm  flex lg:gap-4 gap-2 items-center px-1 justify-center ">
               <button className="border-none text-xs bg-button-yellow rounded-md px-4 py-2 lg:px-6 lg:py-2 font-bold hover:bg-hover-button ">
                 Get Started
               </button>
-              <input
-                type="text"
-                className="w-25 rounded-lg h-10 lg:w-[225px] bg-input-color px-2 focus:outline-none lg:h-8 focus:bg-focus-color"
-                placeholder="Search Recipes.."
-              />
-              <div className=" text-center flex items-center justify-center rounded-md hover:scale-105  bg-button-yellow w-10 h-10 lg:h-8 cursor-pointer">
-                <FaSearch size={25} className="" />
-              </div>
+              <Search inputStyle={inputStyle} buttonStyle={buttonStyle} />
             </div>
           </div>
           {/* the hero section image */}
