@@ -16,6 +16,7 @@ function Recipe() {
   const handleLoadingChange = (newLoading) => {
     setLoading(newLoading);
   };
+  console.log(recipes);
   return (
     // <div className="transform translate-y-10 mb-96 p-10 mx-auto w-full ">
     <div className="min-h-screen px-14  mb-16 transform translate-y-10  ">
@@ -29,11 +30,7 @@ function Recipe() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 ">
           {!loading &&
             recipes.map((recipe, index) => (
-              <RecipeCard
-                recipe={recipe.recipe}
-                key={index}
-                {...getRandomColor()}
-              />
+              <RecipeCard recipe={recipe} key={index} {...getRandomColor()} />
             ))}
           {loading &&
             [...Array(9)].map((_, index) => (

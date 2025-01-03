@@ -1,5 +1,4 @@
 import React from "react";
-import chief from "../assets/images/chief.jpg";
 import Slider from "../components/RecipesHero/Slider";
 import RecipeCategory from "../components/RecipesHero/RecipeCategory";
 import NewsInfo from "../components/RecipesHero/NewsInfo";
@@ -47,7 +46,7 @@ function RecipeFinderHero() {
           </div>
           {/* the hero section image */}
           <div className=" max-w-sm">
-            <img src={chief} className="w-full h-auto m-10" />
+            <img src="/images/chief.jpg" className="w-full h-auto m-10" />
           </div>
         </div>
         {/* herosection */}
