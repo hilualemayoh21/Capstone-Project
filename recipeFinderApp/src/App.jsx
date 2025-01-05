@@ -10,6 +10,7 @@ import News from "./pages/News";
 import Recipe from "./pages/Recipe";
 import Signin from "./components/RecipesHero/Signin";
 import Subscribe from "./pages/Subscribe";
+import RecipeDetail from "./components/RecipesHero/RecipeDetail";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="recipe" element={<Recipe />} />
             <Route path="subscribe" element={<Subscribe />} />
             <Route path="signin" element={<Signin />} />
+            <Route path="recipes/:id" element={<RecipeDetail />} />
           </Route>
         </Routes>
       </Router>

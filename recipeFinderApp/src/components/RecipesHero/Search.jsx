@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 
-function Search({ inputStyle, buttonStyle, onRecipeChange, onLoadingChange }) {
+function Search({
+  inputStyle,
+  buttonStyle,
+  onRecipeChange,
+  onLoadingChange,
+  onErrorChange,
+}) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const fetchRecipe = async (query) => {
@@ -18,7 +24,6 @@ function Search({ inputStyle, buttonStyle, onRecipeChange, onLoadingChange }) {
       }
 
       const data = await response.json();
-
       console.log("Fetched data:", data); // Debug log to inspect the response
 
       // Handle case where no meals are found
@@ -28,6 +33,7 @@ function Search({ inputStyle, buttonStyle, onRecipeChange, onLoadingChange }) {
       onRecipeChange(filteredRecipes);
     } catch (error) {
       console.error("Error fetching recipes:", error);
+      onErrorChange(error);
       // Optionally show an error message to the user
       alert("There was an issue fetching the recipes. Please try again later.");
     } finally {

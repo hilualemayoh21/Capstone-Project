@@ -33,18 +33,18 @@ const categoriesImage = [
 
 function RecipeCategory() {
   return (
-    <div className=" w-full">
-      <h2 className="lg:text-4xl text-lg w-full text-center p-2 lg:p-8 font-bold">
+    <div className=" w-full ">
+      <h2 className="lg:text-4xl text-lg w-full text-center p-2 lg:p-8 font-bold md:mt-14 md:mb-6 md:text-2xl">
         Find Recipes by Category
       </h2>
       <div
-        className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4   lg:mx-40 p-2 mx-8 gap-4 `}
+        className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4   lg:mx-40 p-2 mx-8 gap-4 md:mx-[8em] `}
       >
         {categoriesImage.map((image, index) => (
           <div
-            className={`w-full lg:max-w-[200px] max-w-[120px] h-[35px]  sm:h-[70px] bg-white shadow-md  rounded-md flex justify-center items-center ${
+            className={`w-full lg:max-w-[200px] max-w-[120px] h-[35px] md:max-w-[170px] sm:h-[70px] bg-white shadow-md  rounded-md flex justify-center items-center ${
               categoriesImage.length - 1 === index
-                ? `transform translate-x-24 lg:translate-x-40`
+                ? `transform translate-x-24 md:translate-x-60 md:-mx-8  lg:translate-x-60 lg:-mx-16`
                 : ""
             } ${
               index >= 4 && index < 7
