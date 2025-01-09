@@ -32,6 +32,7 @@ function Recipe() {
           onRecipeChange={handleRecipesChange}
           onLoadingChange={handleLoadingChange}
           onErrorChange={handleErrorChange}
+          Query="chicken"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 mb-4 ">
           {error ? <h>{error}</h> : ""}
@@ -49,7 +50,7 @@ function Recipe() {
               </h4>
             </div>
           )}
-          {loading &&
+          {/* {loading &&
             [...Array(9)].map((_, index) => (
               <div className="flex w-full flex-col gap-4" key={index}>
                 <div className="skeleton h-32 w-full"></div>
@@ -58,7 +59,7 @@ function Recipe() {
                   <div className="skeleton h-4 w-24"></div>
                 </div>
               </div>
-            ))}
+            ))} */}
         </div>
       </div>
     </div>

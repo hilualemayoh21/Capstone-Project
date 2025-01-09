@@ -44,7 +44,7 @@ function NewsInfo() {
         <h3 className="md:text-2xl font-bold  px-4 py-1  lg:px-24">
           Newest Recipes
         </h3>
-        <div className="bg-primary w-full lg:h-[260px] h-[180px] lg:py-6 py-4">
+        <div className="bg-primary w-full lg:h-[260px]  md:h-[270px] h-[180px]  lg:py-6 py-4">
           <Slider images={Newest} />
         </div>
       </div>

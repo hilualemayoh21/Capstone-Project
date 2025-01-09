@@ -7,6 +7,7 @@ function Search({
   onRecipeChange,
   onLoadingChange,
   onErrorChange,
+  Query, // Prop for initial query
 }) {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -14,6 +15,7 @@ function Search({
     try {
       console.log("Fetching recipes for:", query); // Debug log
       onLoadingChange(true); // Notify parent that loading has started
+
       const response = await fetch(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
       );
@@ -27,25 +29,27 @@ function Search({
       console.log("Fetched data:", data); // Debug log to inspect the response
 
       // Handle case where no meals are found
-      const filteredRecipes = data.meals || []; // Fallback to an empty array
-
-      // Update parent state with filtered recipes
-      onRecipeChange(filteredRecipes);
+      const filteredRecipes = data.meals || [];
+      onRecipeChange(filteredRecipes); // Update parent state
     } catch (error) {
       console.error("Error fetching recipes:", error);
-      onErrorChange(error);
-      // Optionally show an error message to the user
-      alert("There was an issue fetching the recipes. Please try again later.");
+      onErrorChange(error); // Notify parent of error
     } finally {
-      onLoadingChange(false); // Notify parent that loading has finished
+      onLoadingChange(false); // Notify parent that loading has stopped
     }
   };
+
+  // Fetch data based on the `Query` prop (for Recipe Page)
   useEffect(() => {
-    fetchRecipe("chicken");
-  }, []);
+    if (Query) {
+      fetchRecipe(Query);
+    }
+  }, [Query]);
+
   const handleSearch = (e) => {
     e.preventDefault();
     fetchRecipe(searchQuery); // Fetch recipes using the search query
+    setSearchQuery(""); // Clear input field after search
   };
 
   return (
@@ -59,7 +63,9 @@ function Search({
           value={searchQuery}
         />
         <div className={buttonStyle}>
-          <FaSearch size={25} />
+          <button type="submit">
+            <FaSearch size={25} />
+          </button>
         </div>
       </label>
     </form>
