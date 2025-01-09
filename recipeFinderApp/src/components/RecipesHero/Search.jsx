@@ -13,7 +13,6 @@ function Search({
 
   const fetchRecipe = async (query) => {
     try {
-      console.log("Fetching recipes for:", query); // Debug log
       onLoadingChange(true); // Notify parent that loading has started
 
       const response = await fetch(
@@ -26,7 +25,6 @@ function Search({
       }
 
       const data = await response.json();
-      console.log("Fetched data:", data); // Debug log to inspect the response
 
       // Handle case where no meals are found
       const filteredRecipes = data.meals || [];

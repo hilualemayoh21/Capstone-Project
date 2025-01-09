@@ -2,11 +2,6 @@ import React, { useState, useRef } from "react";
 import { FaHeart, FaHeartbeat } from "react-icons/fa";
 import { MdOutlineSoupKitchen } from "react-icons/md";
 
-// Helper function to return the first two health labels (if available)
-// const returnTwoLabel = (arr) => {
-//   return [arr[0], arr[1]];
-// };
-
 function RecipeCard({ recipe, bg, badge }) {
   const [isFavorite, setIsFavorite] = useState(
     localStorage.getItem("favorites")?.includes(recipe.strMeal)

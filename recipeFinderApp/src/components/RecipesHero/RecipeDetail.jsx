@@ -11,7 +11,6 @@ function RecipeDetail() {
   const { badge } = { ...getRandomColor() };
 
   useEffect(() => {
-    console.log("Fetching recipe for id:", id);
     const fetchRecipeDetail = async () => {
       setLoading(true);
       try {
@@ -19,7 +18,7 @@ function RecipeDetail() {
           `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
         );
         const data = await response.json();
-        console.log("Fetched recipe data:", data); // Debugging log
+
         setRecipeDetails(data.meals ? data.meals[0] : "");
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -52,7 +51,6 @@ function RecipeDetail() {
   const ingredients = recipeDetails
     ? getIngredientAndMeasure(recipeDetails)
     : [];
-  console.log(recipeDetails);
 
   if (loading) {
     return <h3>Loading...</h3>;
