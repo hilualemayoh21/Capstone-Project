@@ -3,7 +3,7 @@ import NewsInfo from "../components/RecipesHero/NewsInfo";
 
 function News() {
   return (
-    <div className="pt-6">
+    <div className="md:pt-6 pt-[6em] bg-bg-rose ">
       <NewsInfo />
     </div>
   );
