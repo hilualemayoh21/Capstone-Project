@@ -3,7 +3,7 @@ import SubscriptionForm from "../components/RecipesHero/SubscriptionForm";
 
 function Subscribe() {
   return (
-    <div className="pt-20 bg-button-yellow md:pt-40  ">
+    <div className="pt-20 bg-button-yellow md:pt-40 lg:pt-9 ">
       <div className="text-center p-4">
         <h2 className="text-4xl font-bold text-center pt-10 ">
           Never Miss a Recipe!
